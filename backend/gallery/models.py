@@ -5,6 +5,7 @@ class Photo(models.Model):
     """Фото"""
     name = models.CharField("Имя", max_length=50)
     image = models.ImageField("Фото", upload_to="gallery/")
+    created = models.DateTimeField("Дата создания", auto_now_add=True)
     slug = models.SlugField("url", max_length=50, unique=True)
 
     def __str__(self):
@@ -19,6 +20,7 @@ class Gallery(models.Model):
     """Галлерея"""
     name = models.CharField("Имя", max_length=50)
     photos = models.ManyToManyField(Photo, verbose_name="Фотографии")
+    created = models.DateTimeField("Дата создания", auto_now_add=True)
     slug = models.SlugField("url", max_length=50, unique=True)
 
     def __str__(self):

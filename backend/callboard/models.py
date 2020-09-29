@@ -21,6 +21,10 @@ class Category(MPTTModel):
     class MPTTMeta:
         order_insertion_by = ['name']
 
+    class Meta:
+        verbose_name = "Категория"
+        verbose_name_plural = "Категории"
+
 
 class FilterAdvert(models.Model):
     """Фильтры"""
@@ -45,6 +49,8 @@ class DateAdvert(models.Model):
 
     class Meta:
         verbose_name = "Срок"
+        verbose_name_plural = "Сроки"
+        ordering = ["id"]
 
 
 class Advert(models.Model):
