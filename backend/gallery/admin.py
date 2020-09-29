@@ -6,12 +6,12 @@ from .models import Gallery, Photo
 @admin.register(Gallery)
 class GalleryAdmin(admin.ModelAdmin):
     """Галерея"""
-    list_display = ("name", "created", "id")
-    prepopulated_fields = {"slug": ("name",)}
+    list_display = ('name', 'created', 'id')
+    prepopulated_fields = {'slug': ('name',)}
 
 
 @admin.register(Photo)
 class PhotoAdmin(admin.ModelAdmin):
     """Изображение"""
-    list_display = ("name", "created", "id")
-    prepopulated_fields = {"slug": ("name",)}
+    list_display = ('name', 'created', 'id')
+    prepopulated_fields = {'slug': ('name',)}
